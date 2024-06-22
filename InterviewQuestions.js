@@ -68,6 +68,8 @@ const findMissingNumbers = (arr) => {
 // 3 in provided arr ? true but ! will make it false so filter won't return 3
 // 4 in provided arr ? false but ! will make it true so filter will return 4
 // 5 in provided arr ? true but ! will make it false so filter won't return 5
+console.log("OUTPUT", findMissingNumbers([1, 3, 5]));
+// OUTPUT -> [2, 4]
 
 // Solution 2
 /*
@@ -83,4 +85,3 @@ const missinngNumberFunc=(arr)=>{
 console.log(missinngNumberFunc([1,5]))
 */
 
-console.log("OUTPUT", findMissingNumbers([1, 3, 5]));
