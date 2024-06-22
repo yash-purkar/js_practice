@@ -52,19 +52,35 @@ const findMissingNumber = (arr) => {
 };
 
 const findMissingNumbers = (arr) => {
-  const missingNumbers = [];
-  const arr2 = [...new Array(arr[arr.length-1])].map((item,i) => i + 1);
-  console.log(arr2)
+  // Creating array of all numbers upto n;
+  const arr2 = [...new Array(arr[arr.length - 1])].map((_, i) => i + 1);
 
-  for (let i = 0; i < arr[arr.length - 1]; i++) {
-    console.log(arr[i])
-    if(!arr2?.includes(arr[i])) {
-        // console.log(arr[i])
-        missingNumbers.push(i + 1)
-    }
-  }
-
-  return missingNumbers;
+  // If the number from arr2 not in provided arr means it is missing number in an array;
+  return arr2?.filter((item) => !arr?.includes(item));
 };
 
-console.log(findMissingNumbers([1, 3, 5]));
+// provided arr [1, 3, 5]
+// arr2 [1, 2, 3,4, 5]
+
+// Filter
+// 1 in provided arr ? true but ! will make it false so filter won't return 1
+// 2 in provided arr ? false but ! will make it true so filter will return 2
+// 3 in provided arr ? true but ! will make it false so filter won't return 3
+// 4 in provided arr ? false but ! will make it true so filter will return 4
+// 5 in provided arr ? true but ! will make it false so filter won't return 5
+
+// Solution 2
+/*
+const missinngNumberFunc=(arr)=>{
+    let missingNumber=[]
+    for(i=0;i<arr[arr.length-1];i++){
+    if(!arr.includes(i+1) && i+1!==arr[i]) {
+        missingNumber.push(i+1)
+    }
+    }
+    return missingNumber
+}
+console.log(missinngNumberFunc([1,5]))
+*/
+
+console.log("OUTPUT", findMissingNumbers([1, 3, 5]));
