@@ -68,6 +68,8 @@ const findMissingNumbers = (arr) => {
 // 3 in provided arr ? true but ! will make it false so filter won't return 3
 // 4 in provided arr ? false but ! will make it true so filter will return 4
 // 5 in provided arr ? true but ! will make it false so filter won't return 5
+console.log("OUTPUT", findMissingNumbers([1, 3, 5]));
+// OUTPUT -> [2, 4]
 
 // Solution 2
 /*
@@ -83,4 +85,66 @@ const missinngNumberFunc=(arr)=>{
 console.log(missinngNumberFunc([1,5]))
 */
 
-console.log("OUTPUT", findMissingNumbers([1, 3, 5]));
+// 5. Question: Write a function that checks if a given string is a palindrome.
+
+const checkPalindrome = (str) => {
+  let reverseStr = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    reverseStr += str[i];
+  }
+
+  return str === reverseStr;
+};
+
+const checkPalindrome1 = (str) => str?.split("")?.reverse()?.join("") === str;
+
+const isPalindrome1 = (str) => {
+  for (i = 0; i < Math.floor(str.length / 2); i++) {
+    console.log("_num_", str[i], str[str.length - 1 - i]);
+    if (str[i] !== str[str.length - 1 - i]) {
+      return false;
+    }
+  }
+  return true;
+};
+console.log(isPalindrome1("level"));
+console.log(checkPalindrome1("yash")); // false
+console.log(checkPalindrome1("level")); //true
+
+// 6. Question: What will be the output of the following code?
+for (var i = 1; i <= 5; i++) {
+  setTimeout(function () {
+    console.log(i);
+  }, 1000);
+}
+
+// Answer - 5 time 6 After 1 second
+
+// 7.Question: What will be the output of the following code?
+for (var i = 1; i < 5; i++) {
+  setTimeout(function () {
+    console.log(i);
+  }, 1000);
+}
+
+// 4 times 5
+
+//  8. How to empty an array in javascript?
+
+/*1. array=[]
+2. array.length=0
+3. array.splice(0, arr.length)
+4. while(array.length){
+  array.pop()
+  }*/
+
+// 9.  How would you check if a number is a integer or decimal?
+// number % 1 === 0; //true
+
+// Bcz, if number is divided by zero it is an integer.
+
+// 10. Write a "mul"function which will properly when invoked as below syntax.
+const mul = (num1) => (num2) => (num3) => num1 * num2 * num3;
+
+console.log(mul(2)(3)(4)); // output :: 24
+console.log(mul(4)(3)(4)); /// output :: 48
